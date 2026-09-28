@@ -1,0 +1,38 @@
+/* 首页头图：琪亚娜（崩坏3 2019 生日贺图，版权归米哈游） */
+
+/* 按头图区域裁切，不随页面固定，保证脸完整露出 */
+#page-header.full_page {
+  background-attachment: scroll;
+  background-position: center 38%;
+}
+
+/* 遮罩：顶部压暗一条让导航菜单看得清，左边压暗放文字，中间的琪亚娜保持明亮 */
+#page-header.full_page:not(.not-top-img):before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .45) 0, rgba(0, 0, 0, 0) 90px),
+    linear-gradient(90deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .25) 35%, rgba(0, 0, 0, .05) 60%);
+}
+
+[data-theme='dark'] #page-header.full_page:not(.not-top-img):before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .55) 0, rgba(0, 0, 0, 0) 90px),
+    linear-gradient(90deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .45) 35%, rgba(0, 0, 0, .25) 60%);
+}
+
+/* 标题和副标题靠左，避开中间的脸 */
+#page-header.full_page #site-info {
+  padding: 0 6%;
+}
+
+#page-header.full_page #site-title,
+#page-header.full_page #site-subtitle {
+  text-align: left;
+}
+
+/* 手机屏幕窄，脸会占满宽度，文字挪到底部 */
+@media screen and (max-width: 768px) {
+  #page-header.full_page #site-info {
+    top: auto;
+    bottom: 12%;
+  }
+}
